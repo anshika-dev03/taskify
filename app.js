@@ -11,8 +11,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "http://localhost:5173", 
-      "https://taskify.vercel.app"  // Vercel frontend
+      "http://localhost:5173"
     ],
     credentials: true,
   })
