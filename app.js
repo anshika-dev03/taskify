@@ -32,7 +32,9 @@ app.use(express.static(path.resolve(__dirname, "client", "dist")));
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
 });
-
-app.listen(process.env.PORT, () => {
-  console.log(`Server Started : ${process.env.PORT}`);
-});
+if(require.main ===module){
+ app.listen(process.env.PORT, () => {
+   console.log(`Server Started : ${process.env.PORT}`);
+ });
+}
+module.exports=app;
