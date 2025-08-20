@@ -10,10 +10,14 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: [
+      "http://localhost:5173", 
+      "https://taskify.vercel.app"  // Vercel frontend
+    ],
     credentials: true,
   })
 );
+
 
 const usersApi = require("./controllers/user");
 const tasksApi = require("./controllers/task");
